@@ -85,12 +85,12 @@ curl -i http://localhost:8081/shirts
 # Insert record
 curl -i -X POST http://localhost:8081/shirts \
   -H "Content-Type: application/json" \
-  -d '{"brand": "PaperRex (PRX)", "size": "XL"}'
+  -d '{"brand": "Fashion", "size": "XL"}'
 
 # Update record
 curl -i -X PUT http://localhost:8081/shirts/5 \
   -H "Content-Type: application/json" \
-  -d '{"brand": "PaperRex (PRX)", "size": "L"}'
+  -d '{"brand": "Fashion", "size": "L"}'
 
 # Delete record
 curl -i -X DELETE http://localhost:8081/shirts/5
