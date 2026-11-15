@@ -2,9 +2,12 @@
 
 A structured repository documenting my progression in backend engineering with **Go (Golang)**. Rather than relying immediately on high-level abstractions, this repository focuses on building systems from the ground up—starting from raw `net/http` handlers and direct SQL queries to clean architecture, authentication, and containerized deployments.
 
-![Go Version](https://shields.io)
-![PostgreSQL](https://shields.io)
-![License](https://shields.io)
+## Implementation Notes (`api-baju`)
+
+* **Manual Path Parameter Parsing:** Used `strings.TrimPrefix` and `strconv.Atoi` on `/shirts/` instead of an external router to understand how Go's `http.ServeMux` handles prefix matching.
+* **PostgreSQL Auto-Increment Retrieval:** Used `QueryRow(... RETURNING id).Scan(&id)` during `POST` requests because `lib/pq` does not support `sql.Result.LastInsertId()`.
+* **Empty Slice Initialization:** Initialized `shirts := []Shirts{}` rather than a `nil` slice so `GET /shirts` serializes to `[]` instead of `null` when the table is empty.
+
 
 ---
 
