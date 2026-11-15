@@ -1,0 +1,7 @@
+services:
+  api-baju:
+    build: .
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/app
